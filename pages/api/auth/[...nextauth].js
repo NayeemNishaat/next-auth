@@ -38,7 +38,7 @@ export default NextAuth({
 				client.close();
 				return {
 					email: user.email
-				}; // Note: returning {} will let next-auth know authorization succeeded.
+				}; // Note: returning {} will let next-auth know authorization succeeded. And it will populate the object with JWT and the specified key-value pairs!
 			}
 		})
 	]
