@@ -41,5 +41,6 @@ export default NextAuth({
 				}; // Note: returning {} will let next-auth know authorization succeeded. And it will populate the object with JWT and the specified key-value pairs!
 			}
 		})
-	]
+	],
+	secret: "NayeemNishaat"
 });

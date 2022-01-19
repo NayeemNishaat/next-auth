@@ -27,9 +27,11 @@ async function handler(req, res) {
 	const db = client.db();
 
 	// Important: Must await to fulfill the promise else we will get a promise object!
-	const existingUser = db.collection("users").findOne({
-		email: email
-	});
+	const existingUser = await db
+		.collection("users")
+		.findOne({
+			email: email
+		});
 
 	if (existingUser) {
 		res.status(422).json({
