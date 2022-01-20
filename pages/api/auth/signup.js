@@ -43,7 +43,7 @@ async function handler(req, res) {
 
 	const hashedPassword = await hashPassword(password); // Important: Very careful with async tasks/promise. Because they return an object if we don't use await/then method to resolve the promise!
 
-	const result = await db.collection("users").insertOne({
+	await db.collection("users").insertOne({
 		email,
 		password: hashedPassword
 	});

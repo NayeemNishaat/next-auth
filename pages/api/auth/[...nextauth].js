@@ -3,6 +3,8 @@ import Credentials from "next-auth/providers/credentials";
 import { connectToDatabase } from "../../../lib/db";
 import { verifyPassword } from "../../../lib/auth";
 
+// Important: Catch all route is used because next-auth will invoke this api-component with a weird path!
+
 // Note: It return a handler function!
 export default NextAuth({
 	session: { jwt: true },
